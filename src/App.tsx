@@ -20,13 +20,16 @@ function App() {
     created_at: "",
   });
 
+  const [inputValue, setInputValue] = useState<string>("marriamdd");
   console.log(userInfo);
   useEffect(() => {
     GetUserInfo();
   }, []);
   async function GetUserInfo() {
     try {
-      const response = await fetch("https://api.github.com/users/marriamdd");
+      const response = await fetch(
+        `https://api.github.com/users/${inputValue}`
+      );
       if (response.ok) {
         const responseData = await response.json();
         console.log(responseData);
@@ -48,7 +51,11 @@ function App() {
     <>
       <GlobalStyles />
       <Header />
-      <SearchBar />
+      <SearchBar
+        setInputValue={setInputValue}
+        inputValue={inputValue}
+        GetUserInfo={GetUserInfo}
+      />
       <UserInfoMain userInfo={userInfo} />
     </>
   );
