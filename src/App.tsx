@@ -9,9 +9,8 @@ function App() {
 
   return (
     <>
-      <GlobalStyles>
-        <Header />
-      </GlobalStyles>
+      <GlobalStyles />
+      <Header />
     </>
   );
 }
