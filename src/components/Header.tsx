@@ -30,7 +30,7 @@ const HeaderContainer = styled.div`
       letter-spacing: 2.5px;
     }
     & > button {
-      background-image: url(public/assets/icon-sun.svg);
+      background-image: url(/assets/icon-sun.svg);
       padding: 10px 10px;
       background-color: transparent;
       background-repeat: no-repeat;
