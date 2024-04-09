@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
    align-items: center;
    justify-content: center;
  @media screen and (min-width: 768px){
-  /* padding:10.4rem 9.8rem 20rem */
+  padding:10.4rem 9.8rem 20rem
  }
    }
  button {
@@ -43,6 +43,9 @@ color: white;
      &::placeholder {
        color: ${props.lightMode ? "#4B6A9B" : "white"};
      }
+   }
+   input:focus {
+     outline: none;
    }
  `}
 `;

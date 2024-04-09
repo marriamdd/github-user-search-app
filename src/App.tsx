@@ -34,9 +34,9 @@ function App() {
     twitter_username: "",
   });
   const [lightMode, setLightMode] = useState(false);
-  console.log(lightMode);
+  const [inappropriateUser, setInappropriateUser] = useState(false);
   const [inputValue, setInputValue] = useState<string>("marriamdd");
-
+  console.log(inappropriateUser);
   useEffect(() => {
     GetUserInfo();
   }, []);
@@ -47,7 +47,7 @@ function App() {
       );
       if (response.ok) {
         const responseData = await response.json();
-
+        setInappropriateUser(false);
         setUserInfo({
           name: responseData.name,
           login: responseData.login,
@@ -62,7 +62,8 @@ function App() {
           twitter_username: responseData.twitter_username,
         });
       } else {
-        throw new Error("response not ok");
+        setInappropriateUser(true);
+        throw new Error("No results");
       }
     } catch (error) {
       console.log(error);
@@ -74,10 +75,12 @@ function App() {
       <GlobalStyles lightMode={lightMode} />
       <Header setLightMode={setLightMode} lightMode={lightMode} />
       <SearchBar
+        setInappropriateUser={setInappropriateUser}
         setInputValue={setInputValue}
         inputValue={inputValue}
         GetUserInfo={GetUserInfo}
         lightMode={lightMode}
+        inappropriateUser={inappropriateUser}
       />
       <UserInfoMain userInfo={userInfo} lightMode={lightMode} />
     </>

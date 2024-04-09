@@ -7,11 +7,15 @@ export default function SearchBar({
   inputValue,
   GetUserInfo,
   lightMode,
+  inappropriateUser,
+  setInappropriateUser,
 }: {
   setInputValue: IUserInfo;
   inputValue: string;
   GetUserInfo: string;
   lightMode: boolean;
+  inappropriateUser: boolean;
+  setInappropriateUser: boolean;
 }) {
   const handleVAlueChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -22,6 +26,7 @@ export default function SearchBar({
 
   const handleInputClick = () => {
     setInputValue("");
+    setInappropriateUser(false);
   };
   return (
     <SearchBarContainer lightMode={lightMode}>
@@ -37,6 +42,7 @@ export default function SearchBar({
           placeholder="Search GitHub username…"
         />
       </div>
+      {inappropriateUser && <h3>No results</h3>}
 
       <button onClick={handleSearchButton}>Search</button>
     </SearchBarContainer>
@@ -46,12 +52,14 @@ export default function SearchBar({
 const SearchBarContainer = styled.div<{ lightMode: boolean }>`
   min-width: 32.7rem;
   border-radius: 1.5rem;
+  padding-inline: 1rem;
   background: ${(props) => (!props.lightMode ? "#1e2a47" : "white")};
   height: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-block: 2rem 1rem;
+
   @media screen and (min-width: 768px) {
     padding: 1rem 1rem;
   }
@@ -59,6 +67,7 @@ const SearchBarContainer = styled.div<{ lightMode: boolean }>`
     display: flex;
     align-items: center;
   }
+
   & > div label {
     background-image: url(/assets/icon-search.svg);
     padding: 1rem 1rem;
@@ -74,9 +83,19 @@ const SearchBarContainer = styled.div<{ lightMode: boolean }>`
     font-weight: 400;
     line-height: 2.5rem;
     width: 18.2rem;
+
     @media screen and (min-width: 768px) {
-      width: 45.2rem;
+      /* width: 45.2rem; */
       font-size: 1.8rem;
+    }
+  }
+  & > h3 {
+    color: #f74646;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: normal;
+    @media screen and (min-width: 768px) {
+      font-size: 1.5rem;
     }
   }
   & > button {
