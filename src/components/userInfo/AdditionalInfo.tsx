@@ -8,8 +8,13 @@ export default function AdditionalInfo({ userInfo }) {
       </div>
       <div>
         <img src="/assets/icon-website.svg" alt="icon-website" />
-        <p>{userInfo.html_url ? userInfo.html_url : "Not Available"}</p>
+        {userInfo.html_url ? (
+          <a href={userInfo.html_url}>{userInfo.html_url}</a>
+        ) : (
+          <p>Not Available</p>
+        )}
       </div>
+
       <div>
         <img src="/assets/icon-twitter.svg" alt="icon-twitter" />
         <p>
@@ -39,11 +44,19 @@ const AdditionalInfoDiv = styled.div`
     display: flex;
     gap: 1.2rem;
     align-items: center;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
     & > p {
       font-size: 1.3rem;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
       @media screen and (min-width: 768px) {
         font-size: 15px;
       }

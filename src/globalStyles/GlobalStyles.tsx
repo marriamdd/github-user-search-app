@@ -32,6 +32,7 @@ color: white;
    }
 
    p,
+   a,
    h2,
    h1,
    span {
