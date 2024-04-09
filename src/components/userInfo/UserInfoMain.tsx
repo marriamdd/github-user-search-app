@@ -1,4 +1,3 @@
-import { IUserInfo } from "../../App";
 import Activities from "./Activities";
 import AdditionalInfo from "./AdditionalInfo";
 import UserHeaderInfo from "./UserHeaderInfo";
@@ -8,10 +7,13 @@ export default function UserInfoMain({ userInfo, lightMode }) {
   return (
     <UserInfoMainContainer lightMode={lightMode}>
       <UserHeaderInfo userInfo={userInfo} />
-      <p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-        Quisque volutpat mattis eros.
-      </p>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+          Quisque volutpat mattis eros.
+        </p>
+      </div>
+
       <Activities userInfo={userInfo} lightMode={lightMode} />
       <AdditionalInfo userInfo={userInfo} />
     </UserInfoMainContainer>
@@ -19,15 +21,24 @@ export default function UserInfoMain({ userInfo, lightMode }) {
 }
 
 const UserInfoMainContainer = styled.div<{ lightMode: boolean }>`
-  border-radius: 15px;
+  border-radius: 1.5rem;
   background: ${(props) => (!props.lightMode ? " #1e2a47" : "#FEFEFE;")};
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  & > p {
-    font-size: 13px;
+  @media screen and (min-width: 768px) {
+    width: 57.3rem;
+  }
+  & > div {
+    padding-inline: 2rem;
+  }
+  & > div p {
+    font-size: 1.3rem;
     font-weight: 400;
-    line-height: 25px;
+    line-height: 2.5rem;
+    @media screen and (min-width: 768pc) {
+      font-size: 1.5rem;
+    }
   }
 `;

@@ -26,23 +26,30 @@ export default function AdditionalInfo({ userInfo }) {
   );
 }
 const AdditionalInfoDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 28rem;
+  display: grid;
+
+  min-width: 28rem;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+
+    width: 49.3rem;
+  }
 
   & > div {
     display: flex;
     gap: 1.2rem;
     align-items: center;
     & > p {
-      font-size: 13px;
+      font-size: 1.3rem;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      @media screen and (min-width: 768px) {
+        font-size: 15px;
+      }
     }
     & > img {
-      width: 13.753px;
+      width: 1.3rem;
       height: 2rem;
     }
   }

@@ -18,7 +18,7 @@ export default function Header({ setLightMode, lightMode }) {
 const HeaderContainer = styled.div<{ lightMode: boolean }>`
   display: flex;
   justify-content: space-between;
-  width: 32.7rem;
+  min-width: 32.7rem;
 
   font-weight: 700;
   & > h1 {
@@ -39,11 +39,11 @@ const HeaderContainer = styled.div<{ lightMode: boolean }>`
         !props.lightMode
           ? "url(/assets/icon-sun.svg)"
           : "url(/assets/icon-moon.svg)"};
-      padding: 10px 10px;
+      padding: 1rem 1rem;
       background-color: transparent;
       background-repeat: no-repeat;
       border: none;
-      position: 10px;
+      position: 1rem;
     }
   }
 `;

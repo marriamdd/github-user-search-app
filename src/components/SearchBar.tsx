@@ -25,54 +25,72 @@ export default function SearchBar({
   };
   return (
     <SearchBarContainer lightMode={lightMode}>
-      <label htmlFor="SearchBarInput"></label>
-      <input
-        id="SearchBarInput"
-        name="SearchBarInput"
-        type="text"
-        value={inputValue}
-        onChange={handleVAlueChange}
-        onClick={handleInputClick}
-        placeholder="Search GitHub username…"
-      />
+      <div>
+        <label htmlFor="SearchBarInput"></label>
+        <input
+          id="SearchBarInput"
+          name="SearchBarInput"
+          type="text"
+          value={inputValue}
+          onChange={handleVAlueChange}
+          onClick={handleInputClick}
+          placeholder="Search GitHub username…"
+        />
+      </div>
+
       <button onClick={handleSearchButton}>Search</button>
     </SearchBarContainer>
   );
 }
 
 const SearchBarContainer = styled.div<{ lightMode: boolean }>`
-  width: 32.7rem;
-  border-radius: 15px;
+  min-width: 32.7rem;
+  border-radius: 1.5rem;
   background: ${(props) => (!props.lightMode ? "#1e2a47" : "white")};
   height: 6rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   margin-block: 2rem 1rem;
-  gap: 0.5rem;
-  & > label {
-    background-image: url(/assets/icon-search.svg);
-    padding: 10px 10px;
-    background-repeat: no-repeat;
-    background-size: 20px;
+  @media screen and (min-width: 768px) {
+    padding: 1rem 1rem;
   }
-  & > input {
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+  & > div label {
+    background-image: url(/assets/icon-search.svg);
+    padding: 1rem 1rem;
+    background-repeat: no-repeat;
+    background-size: 2rem;
+  }
+  & > div input {
     background-color: transparent;
     border: none;
+    margin-left: 1rem;
     padding-left: 0.5rem;
-    font-size: 13px;
+    font-size: 1.3rem;
     font-weight: 400;
-    line-height: 25px;
+    line-height: 2.5rem;
     width: 18.2rem;
+    @media screen and (min-width: 768px) {
+      width: 45.2rem;
+      font-size: 1.8rem;
+    }
   }
   & > button {
-    border-radius: 10px;
+    border-radius: 1rem;
     background: #0079ff;
-    width: 84px;
-    height: 46px;
-    font-size: 14px;
+    width: 8.4rem;
+    height: 4.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
 
     border: none;
+    @media screen and (min-width: 768px) {
+      width: 10.6rem;
+      height: 5rem;
+    }
   }
 `;

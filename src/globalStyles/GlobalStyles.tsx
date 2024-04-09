@@ -17,7 +17,9 @@ export const GlobalStyles = createGlobalStyle`
    display: flex;
    align-items: center;
    justify-content: center;
- 
+ @media screen and (min-width: 768px){
+  /* padding:10.4rem 9.8rem 20rem */
+ }
    }
  button {
     font-family: 'Space Mono', monospace;
