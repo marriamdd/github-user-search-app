@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -17,9 +17,29 @@ export const GlobalStyles = createGlobalStyle`
    display: flex;
    align-items: center;
    justify-content: center;
+ 
    }
- button{
-    font-family: 'Space Mono', monospace;  
+ button {
+    font-family: 'Space Mono', monospace;
+color: white;
  }
-   
- `;
+
+ ${(props) => css`
+   body {
+     background: ${!props.lightMode ? "#141D2F" : "#F6F8FF;"};
+   }
+
+   p,
+   h2,
+   h1,
+   span {
+     color: ${props.lightMode ? "#4B6A9B" : "#fff"};
+   }
+   input {
+     color: ${props.lightMode ? "#4B6A9B" : "#fff"};
+     &::placeholder {
+       color: ${props.lightMode ? "#4B6A9B" : "white"};
+     }
+   }
+ `}
+`;

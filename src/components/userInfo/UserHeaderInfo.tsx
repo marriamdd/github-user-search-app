@@ -25,24 +25,18 @@ const UserInfoHeaderContainer = styled.div`
   }
   & > div {
     & > h2 {
-      color: #fff;
-
       font-size: 16px;
-
       font-weight: 700;
     }
 
     & > span {
       color: #0079ff;
-
       font-size: 13px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
     }
     & > p {
-      color: #fff;
-
       font-size: 13px;
       font-style: normal;
       font-weight: 300;

@@ -36,8 +36,6 @@ const AdditionalInfoDiv = styled.div`
     gap: 1.2rem;
     align-items: center;
     & > p {
-      color: #fff;
-
       font-size: 13px;
       font-style: normal;
       font-weight: 400;

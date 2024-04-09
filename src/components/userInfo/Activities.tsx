@@ -1,7 +1,7 @@
 import styled from "styled-components";
-export default function Activities({ userInfo }) {
+export default function Activities({ userInfo, lightMode }) {
   return (
-    <ActivitiesContainer>
+    <ActivitiesContainer lightMode={lightMode}>
       <div>
         <p>Repos</p>
         <span>{userInfo.public_repos}</span>
@@ -18,11 +18,11 @@ export default function Activities({ userInfo }) {
   );
 }
 
-const ActivitiesContainer = styled.div`
+const ActivitiesContainer = styled.div<{ lightMode: boolean }>`
   width: 279px;
   height: 85px;
   border-radius: 10px;
-  background: #141d2f;
+  background: ${(props) => (!props.lightMode ? "#141d2f" : " #F6F8FF;")};
   display: flex;
   justify-content: space-around;
 
@@ -31,8 +31,8 @@ const ActivitiesContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
     & > p {
-      color: #fff;
       text-align: center;
 
       font-size: 11px;
@@ -41,9 +41,8 @@ const ActivitiesContainer = styled.div`
       line-height: normal;
     }
     & > span {
-      color: #fff;
+      color: ${(props) => (!props.lightMode ? "#FFF" : "#2B3442")};
       text-align: center;
-
       font-size: 16px;
       font-style: normal;
       font-weight: 700;

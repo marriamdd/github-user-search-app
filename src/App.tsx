@@ -33,7 +33,8 @@ function App() {
     company: "",
     twitter_username: "",
   });
-
+  const [lightMode, setLightMode] = useState(false);
+  console.log(lightMode);
   const [inputValue, setInputValue] = useState<string>("marriamdd");
 
   useEffect(() => {
@@ -70,14 +71,15 @@ function App() {
 
   return (
     <>
-      <GlobalStyles />
-      <Header />
+      <GlobalStyles lightMode={lightMode} />
+      <Header setLightMode={setLightMode} lightMode={lightMode} />
       <SearchBar
         setInputValue={setInputValue}
         inputValue={inputValue}
         GetUserInfo={GetUserInfo}
+        lightMode={lightMode}
       />
-      <UserInfoMain userInfo={userInfo} />
+      <UserInfoMain userInfo={userInfo} lightMode={lightMode} />
     </>
   );
 }

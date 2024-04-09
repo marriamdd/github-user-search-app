@@ -1,7 +1,18 @@
 import styled from "styled-components";
 import { ChangeEvent } from "react";
+import { IUserInfo } from "../App";
 
-export default function SearchBar({ setInputValue, inputValue, GetUserInfo }) {
+export default function SearchBar({
+  setInputValue,
+  inputValue,
+  GetUserInfo,
+  lightMode,
+}: {
+  setInputValue: IUserInfo;
+  inputValue: string;
+  GetUserInfo: string;
+  lightMode: boolean;
+}) {
   const handleVAlueChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
@@ -13,7 +24,7 @@ export default function SearchBar({ setInputValue, inputValue, GetUserInfo }) {
     setInputValue("");
   };
   return (
-    <SearchBarContainer>
+    <SearchBarContainer lightMode={lightMode}>
       <label htmlFor="SearchBarInput"></label>
       <input
         id="SearchBarInput"
@@ -29,10 +40,10 @@ export default function SearchBar({ setInputValue, inputValue, GetUserInfo }) {
   );
 }
 
-const SearchBarContainer = styled.div`
+const SearchBarContainer = styled.div<{ lightMode: boolean }>`
   width: 32.7rem;
   border-radius: 15px;
-  background: #1e2a47;
+  background: ${(props) => (!props.lightMode ? "#1e2a47" : "white")};
   height: 6rem;
   display: flex;
   align-items: center;
@@ -53,10 +64,6 @@ const SearchBarContainer = styled.div`
     font-weight: 400;
     line-height: 25px;
     width: 18.2rem;
-    color: #fff;
-    &::placeholder {
-      color: white;
-    }
   }
   & > button {
     border-radius: 10px;
@@ -65,7 +72,7 @@ const SearchBarContainer = styled.div`
     height: 46px;
     font-size: 14px;
     font-weight: 700;
-    color: #fff;
+
     border: none;
   }
 `;

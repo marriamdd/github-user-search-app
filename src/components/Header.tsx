@@ -1,24 +1,29 @@
 import styled from "styled-components";
-export default function Header() {
+export default function Header({ setLightMode, lightMode }) {
+  const handleModeToggle = () => {
+    setLightMode(!lightMode);
+  };
+
   return (
-    <HeaderContainer>
+    <HeaderContainer lightMode={lightMode}>
       <h1>devfinder</h1>
       <div>
-        <span>LIGHT</span>
-        <button></button>
+        {!lightMode ? <span>LIGHT</span> : <span>DARK</span>}
+        <button onClick={handleModeToggle}></button>
       </div>
     </HeaderContainer>
   );
 }
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.div<{ lightMode: boolean }>`
   display: flex;
   justify-content: space-between;
   width: 32.7rem;
-  color: #fff;
+
   font-weight: 700;
   & > h1 {
     font-size: 2.6rem;
+    color: ${(props) => (!props.lightMode ? "#FFF" : "#222731")};
   }
   & > div {
     display: flex;
@@ -30,7 +35,10 @@ const HeaderContainer = styled.div`
       letter-spacing: 2.5px;
     }
     & > button {
-      background-image: url(/assets/icon-sun.svg);
+      background-image: ${(props) =>
+        !props.lightMode
+          ? "url(/assets/icon-sun.svg)"
+          : "url(/assets/icon-moon.svg)"};
       padding: 10px 10px;
       background-color: transparent;
       background-repeat: no-repeat;
