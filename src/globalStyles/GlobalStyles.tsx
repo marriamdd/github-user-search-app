@@ -11,9 +11,12 @@ export const GlobalStyles = createGlobalStyle`
    body{
     box-sizing: border-box;
    margin: 0;
-   padding: 0;
+   padding: 3.1rem 2.4rem 5rem;
    font-family: 'Space Mono', monospace;
    background: #141D2F;
+   display: flex;
+   align-items: center;
+   justify-content: center;
    }
  button{
     font-family: 'Space Mono', monospace;  
