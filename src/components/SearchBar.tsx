@@ -18,6 +18,7 @@ export default function SearchBar({
 }) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const handleVAlueChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length > 18) return;
     setInputValue(event.target.value);
     if (buttonRef.current) {
       buttonRef.current.style.background = "#60ABFF";
