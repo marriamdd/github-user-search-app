@@ -15,8 +15,8 @@ export default function UserInfoMain({
       <UserHeaderInfo userInfo={userInfo} />
       <div>
         <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-          Quisque volutpat mattis eros.
+          Lorem ipsum dolor sit amen, consectetuer advising edit. Donee odiv.
+          Queue valuta matts eros.
         </p>
       </div>
 

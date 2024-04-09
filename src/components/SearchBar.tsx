@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useRef } from "react";
 
 export default function SearchBar({
   setInputValue,
@@ -16,11 +16,18 @@ export default function SearchBar({
   inappropriateUser: boolean;
   setInappropriateUser: (value: boolean) => void;
 }) {
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const handleVAlueChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
+    if (buttonRef.current) {
+      buttonRef.current.style.background = "#60ABFF";
+    }
   };
   const handleSearchButton = () => {
     GetUserInfo();
+    if (buttonRef.current) {
+      buttonRef.current.style.background = "#0079FF";
+    }
   };
 
   const handleInputClick = () => {
@@ -43,7 +50,9 @@ export default function SearchBar({
       </div>
       {inappropriateUser && <h3>No results</h3>}
 
-      <button onClick={handleSearchButton}>Search</button>
+      <button ref={buttonRef} onClick={handleSearchButton}>
+        Search
+      </button>
     </SearchBarContainer>
   );
 }
