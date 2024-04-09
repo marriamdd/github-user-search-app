@@ -72,6 +72,7 @@ const SearchBarContainer = styled.div<{ lightMode: boolean }>`
     padding: 1rem 1rem;
     background-repeat: no-repeat;
     background-size: 2rem;
+    cursor: pointer;
   }
   & > div input {
     background-color: transparent;
@@ -104,7 +105,7 @@ const SearchBarContainer = styled.div<{ lightMode: boolean }>`
     height: 4.6rem;
     font-size: 1.4rem;
     font-weight: 700;
-
+    cursor: pointer;
     border: none;
     @media screen and (min-width: 768px) {
       width: 10.6rem;

@@ -1,5 +1,11 @@
 import styled from "styled-components";
-export default function Header({ setLightMode, lightMode }) {
+export default function Header({
+  setLightMode,
+  lightMode,
+}: {
+  setLightMode: (mode: boolean) => void;
+  lightMode: boolean;
+}) {
   const handleModeToggle = () => {
     setLightMode(!lightMode);
   };

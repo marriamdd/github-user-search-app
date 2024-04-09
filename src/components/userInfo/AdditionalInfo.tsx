@@ -1,5 +1,6 @@
 import styled from "styled-components";
-export default function AdditionalInfo({ userInfo }) {
+import { IUserInfo } from "../../App";
+export default function AdditionalInfo({ userInfo }: { userInfo: IUserInfo }) {
   return (
     <AdditionalInfoDiv>
       <div>
@@ -57,6 +58,8 @@ const AdditionalInfoDiv = styled.div`
       font-weight: 400;
       line-height: normal;
       cursor: pointer;
+      margin: 0.5rem;
+
       @media screen and (min-width: 768px) {
         font-size: 15px;
       }

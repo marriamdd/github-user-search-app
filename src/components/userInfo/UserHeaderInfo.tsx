@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-export default function UserHeaderInfo({ userInfo }) {
+import { IUserInfo } from "../../App";
+export default function UserHeaderInfo({ userInfo }: { userInfo: IUserInfo }) {
   return (
     <UserInfoHeaderContainer>
       <img src={userInfo.avatar_url} alt="" />

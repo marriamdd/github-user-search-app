@@ -1,5 +1,12 @@
+import { IUserInfo } from "../../App";
 import styled from "styled-components";
-export default function Activities({ userInfo, lightMode }) {
+export default function Activities({
+  userInfo,
+  lightMode,
+}: {
+  userInfo: IUserInfo;
+  lightMode: boolean;
+}) {
   return (
     <ActivitiesContainer lightMode={lightMode}>
       <div>

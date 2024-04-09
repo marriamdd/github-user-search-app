@@ -2,8 +2,14 @@ import Activities from "./Activities";
 import AdditionalInfo from "./AdditionalInfo";
 import UserHeaderInfo from "./UserHeaderInfo";
 import styled from "styled-components";
-
-export default function UserInfoMain({ userInfo, lightMode }) {
+import { IUserInfo } from "../../App";
+export default function UserInfoMain({
+  userInfo,
+  lightMode,
+}: {
+  userInfo: IUserInfo;
+  lightMode: boolean;
+}) {
   return (
     <UserInfoMainContainer lightMode={lightMode}>
       <UserHeaderInfo userInfo={userInfo} />

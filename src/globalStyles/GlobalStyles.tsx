@@ -1,6 +1,6 @@
 import { createGlobalStyle, css } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle<{ lightMode: boolean }>`
   @font-face {
         font-family: 'Space Mono';
         src: url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
