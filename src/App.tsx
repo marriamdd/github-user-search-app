@@ -6,18 +6,32 @@ import { GlobalStyles } from "./globalStyles/GlobalStyles";
 import SearchBar from "./components/SearchBar";
 import UserInfoMain from "./components/userInfo/UserInfoMain";
 
+export interface IUserInfo {
+  name: string;
+  login: string;
+  avatar_url: string;
+  created_at: "";
+  public_repos: "";
+  followers: "";
+  html_url: "";
+  location: "";
+  following: "";
+  company: "";
+  twitter_username: "";
+}
 function App() {
-  interface IUserInfo {
-    name: string;
-    login: string;
-    avatar_url: string;
-    created_at: "";
-  }
   const [userInfo, setUserInfo] = useState<IUserInfo>({
     name: "",
     login: "",
     avatar_url: "",
     created_at: "",
+    followers: "",
+    public_repos: "",
+    html_url: "",
+    location: "",
+    following: "",
+    company: "",
+    twitter_username: "",
   });
 
   const [inputValue, setInputValue] = useState<string>("marriamdd");
@@ -38,6 +52,13 @@ function App() {
           login: responseData.login,
           avatar_url: responseData.avatar_url,
           created_at: responseData.created_at,
+          public_repos: responseData.public_repos,
+          followers: responseData.followers,
+          html_url: responseData.html_url,
+          location: responseData.location,
+          following: responseData.following,
+          company: responseData.company,
+          twitter_username: responseData.twitter_username,
         });
       } else {
         throw new Error("response not ok");
