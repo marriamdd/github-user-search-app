@@ -30,7 +30,7 @@ color: white;
    body {
      background: ${!props.lightMode ? "#141D2F" : "#F6F8FF;"};
    }
-
+   label,
    p,
    a,
    h2,

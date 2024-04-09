@@ -46,17 +46,17 @@ const AdditionalInfoDiv = styled.div`
     align-items: center;
     a {
       text-decoration: none;
-      cursor: pointer;
     }
     a:hover {
       text-decoration: underline;
     }
-    & > p {
+    & > p,
+    a {
       font-size: 1.3rem;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-
+      cursor: pointer;
       @media screen and (min-width: 768px) {
         font-size: 15px;
       }

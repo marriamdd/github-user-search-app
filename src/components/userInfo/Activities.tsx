@@ -36,7 +36,7 @@ const ActivitiesContainer = styled.div<{ lightMode: boolean }>`
 
     & > p {
       text-align: center;
-
+      cursor: pointer;
       font-size: 1.1rem;
       font-style: normal;
       font-weight: 400;

@@ -8,8 +8,12 @@ export default function Header({ setLightMode, lightMode }) {
     <HeaderContainer lightMode={lightMode}>
       <h1>devfinder</h1>
       <div>
-        {!lightMode ? <span>LIGHT</span> : <span>DARK</span>}
-        <button onClick={handleModeToggle}></button>
+        {!lightMode ? (
+          <label htmlFor="modeButton">LIGHT</label>
+        ) : (
+          <label htmlFor="modeButton">DARK</label>
+        )}
+        <button id="modeButton" onClick={handleModeToggle}></button>
       </div>
     </HeaderContainer>
   );
@@ -29,10 +33,11 @@ const HeaderContainer = styled.div<{ lightMode: boolean }>`
     display: flex;
     gap: 1.6rem;
     align-items: center;
-    & > span {
+    & > label {
       text-align: right;
       font-size: 1.5rem;
       letter-spacing: 2.5px;
+      cursor: pointer;
     }
     & > button {
       background-image: ${(props) =>
@@ -44,6 +49,7 @@ const HeaderContainer = styled.div<{ lightMode: boolean }>`
       background-repeat: no-repeat;
       border: none;
       position: 1rem;
+      cursor: pointer;
     }
   }
 `;
