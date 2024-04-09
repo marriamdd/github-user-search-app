@@ -1,6 +1,18 @@
 import styled from "styled-components";
+import { ChangeEvent } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({ setInputValue, inputValue, GetUserInfo }) {
+  const handleVAlueChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
+  const handleSearchButton = () => {
+    console.log(inputValue);
+    GetUserInfo();
+  };
+
+  const handleInputClick = () => {
+    setInputValue("");
+  };
   return (
     <SearchBarContainer>
       <label htmlFor="SearchBarInput"></label>
@@ -8,9 +20,12 @@ export default function SearchBar() {
         id="SearchBarInput"
         name="SearchBarInput"
         type="text"
+        value={inputValue}
+        onChange={handleVAlueChange}
+        onClick={handleInputClick}
         placeholder="Search GitHub username…"
       />
-      <button>Search</button>
+      <button onClick={handleSearchButton}>Search</button>
     </SearchBarContainer>
   );
 }
@@ -34,6 +49,7 @@ const SearchBarContainer = styled.div`
   & > input {
     background-color: transparent;
     border: none;
+    padding-left: 0.5rem;
     font-size: 13px;
     font-weight: 400;
     line-height: 25px;
