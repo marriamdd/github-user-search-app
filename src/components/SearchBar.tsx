@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { ChangeEvent } from "react";
-import { IUserInfo } from "../App";
 
 export default function SearchBar({
   setInputValue,
@@ -10,12 +9,12 @@ export default function SearchBar({
   inappropriateUser,
   setInappropriateUser,
 }: {
-  setInputValue: IUserInfo;
+  setInputValue: (value: string) => void;
   inputValue: string;
-  GetUserInfo: string;
+  GetUserInfo: () => void;
   lightMode: boolean;
   inappropriateUser: boolean;
-  setInappropriateUser: boolean;
+  setInappropriateUser: (value: boolean) => void;
 }) {
   const handleVAlueChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
