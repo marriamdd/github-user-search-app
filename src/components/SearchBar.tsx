@@ -6,7 +6,6 @@ export default function SearchBar({ setInputValue, inputValue, GetUserInfo }) {
     setInputValue(event.target.value);
   };
   const handleSearchButton = () => {
-    console.log(inputValue);
     GetUserInfo();
   };
 

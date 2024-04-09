@@ -19,7 +19,6 @@ export default function UserInfoMain({ userInfo }) {
 }
 
 const UserInfoMainContainer = styled.div`
-  height: 517px;
   border-radius: 15px;
   background: #1e2a47;
   padding: 2.5rem 2rem;

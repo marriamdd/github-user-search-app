@@ -35,7 +35,7 @@ function App() {
   });
 
   const [inputValue, setInputValue] = useState<string>("marriamdd");
-  console.log(userInfo);
+
   useEffect(() => {
     GetUserInfo();
   }, []);
@@ -46,7 +46,7 @@ function App() {
       );
       if (response.ok) {
         const responseData = await response.json();
-        console.log(responseData);
+
         setUserInfo({
           name: responseData.name,
           login: responseData.login,

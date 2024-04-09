@@ -1,11 +1,6 @@
 import styled from "styled-components";
-interface IUserInfo {
-  name: string;
-  login: string;
-  avatar_url: string;
-  created_at: "";
-}
-export default function UserHeaderInfo({ userInfo }: IUserInfo) {
+
+export default function UserHeaderInfo({ userInfo }) {
   return (
     <UserInfoHeaderContainer>
       <img src={userInfo.avatar_url} alt="" />
