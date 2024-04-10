@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IUserInfo } from "../../App";
+import dateFormat, { masks } from "dateformat";
 export default function UserHeaderInfo({ userInfo }: { userInfo: IUserInfo }) {
   return (
     <UserInfoHeaderContainer>
@@ -7,7 +8,7 @@ export default function UserHeaderInfo({ userInfo }: { userInfo: IUserInfo }) {
       <div>
         <h2>{userInfo.name}</h2>
         <span>@{userInfo.login}</span>
-        <p>Joined {userInfo.created_at} </p>
+        <p>Joined {dateFormat(userInfo.created_at, "mediumDate")}</p>
       </div>
     </UserInfoHeaderContainer>
   );
