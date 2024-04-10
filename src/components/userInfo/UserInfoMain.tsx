@@ -33,6 +33,7 @@ const UserInfoMainContainer = styled.div<{ lightMode: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 32.7rem;
   @media screen and (min-width: 768px) {
     width: 57.3rem;
   }

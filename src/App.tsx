@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import "./App.css";
+
 import Header from "./components/Header";
 import { GlobalStyles } from "./globalStyles/GlobalStyles";
 import SearchBar from "./components/SearchBar";

@@ -1,14 +1,14 @@
 import { createGlobalStyle, css } from "styled-components";
-
 export const GlobalStyles = createGlobalStyle<{ lightMode: boolean }>`
-  @font-face {
-        font-family: 'Space Mono';
-        src: url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    }
+ 
+ 
+    
     html{
+
         font-size: 62.5%;
     }
    body{
+
     box-sizing: border-box;
    margin: 0;
    padding: 3.1rem 2.4rem 5rem;
