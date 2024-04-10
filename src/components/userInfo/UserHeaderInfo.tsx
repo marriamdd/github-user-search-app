@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { IUserInfo } from "../../App";
-import dateFormat, { masks } from "dateformat";
+import dateFormat from "dateformat";
 export default function UserHeaderInfo({ userInfo }: { userInfo: IUserInfo }) {
   return (
     <UserInfoHeaderContainer>
